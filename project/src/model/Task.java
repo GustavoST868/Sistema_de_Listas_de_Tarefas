@@ -18,27 +18,24 @@ public class Task {
         taskcontent.add(content);
         tasks.add("\n");
         count+=1;
-        String content_task = "Task [ "+count+" ] , "+"Priority[ "+priority+" ] , "+"Content[ "+content+" ]";
+        String content_task = "Priority[ "+priority+" ] , "+"Content[ "+content+" ]";
         tasks.add(content_task);
         tasks.add("\n");
     }
 
     //method for deleting tasks
     public void delete(String content) {
-        int occurrences = 0;
-
-        for (int i = 0; i < tasks.size(); i++) {
-            if (tasks.get(i).equals(content)) {
-                occurrences++;
+        int index=0;
+        for(int i=0;i<taskcontent.size();i++){
+            String data = taskcontent.get(i);
+            if(data.equals(content)){
+                break;
             }
+            index+=1;
         }
-
-        if (occurrences == 0) {
-            System.out.println("Dado não encontrado");
-        } else {
-            System.out.println("Total de " + occurrences + " dados deletados");
-            tasks.removeIf(task -> task.equals(content));
-        }
+       taskcontent.remove(content);
+        tasks.remove(index);
+        System.out.println(index);
     }
 
 
@@ -53,7 +50,7 @@ public class Task {
     //method for showing tasks
     public void print(){
         System.out.println(tasks);
-        System.out.println(taskcontent);
+
     }
 
 }
