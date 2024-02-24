@@ -9,5 +9,14 @@ public class Main {
         task.print();
         task.delete("Ligar para Camily");
         task.print();
+        boolean result = task.search("Ligar para Camily");
+        if(result){
+            System.out.println("\nDado encontrado");
+        }else {
+            System.out.println("\nDado não encontrado");
+        }
+
+        task.deleteAll();
+        task.print();
     }
 }

@@ -38,19 +38,29 @@ public class Task {
         System.out.println(index);
     }
 
-
-    public void search(){
-
+    //search function
+    public boolean search(String content){
+        for(String data:taskcontent){
+            if(data.equals(content)){
+                return true;
+            }
+        }
+        return false;
     }
 
+    //function to delete data
     public void deleteAll(){
-
+        taskcontent.clear();
+        tasks.clear();
     }
 
     //method for showing tasks
     public void print(){
-        System.out.println(tasks);
-
+        if(tasks.isEmpty()){
+            System.out.println("\nLista vazia");
+        }else {
+            System.out.println(tasks);
+        }
     }
 
 }
