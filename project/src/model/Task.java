@@ -5,62 +5,66 @@ import java.util.ArrayList;
 import  java.util.List;
 public class Task {
 
-    //attributes
+    //attributes that make up the tasks
 
-    public List<String> tasks = new ArrayList<>();
-    public List<String>  taskcontent = new ArrayList<>();
-    public int count = 0;
+    public List<String>  priorityList = new ArrayList<>();
+    public List<String>  contentList = new ArrayList<>();
 
     public Task(){}
 
     //method for creating tasks
     public void create(String priority,String content){
-        taskcontent.add(content);
-        tasks.add("\n");
-        count+=1;
-        String content_task = "Priority[ "+priority+" ] , "+"Content[ "+content+" ]";
-        tasks.add(content_task);
-        tasks.add("\n");
+        try{
+            priorityList.add(priority);
+            contentList.add(content);
+        }catch (Exception e){
+            System.out.println("Erro na função de criar tarefa");
+        }
+
     }
 
     //method for deleting tasks
     public void delete(String content) {
-        int index=0;
-        for(int i=0;i<taskcontent.size();i++){
-            String data = taskcontent.get(i);
-            if(data.equals(content)){
-                break;
+        int index = 0;
+        try{
+            for (String data:contentList){
+                if(data.equals(content)){
+                    break;
+                }else {
+                    index+=1;
+                }
             }
-            index+=1;
+            contentList.remove(index);
+            priorityList.remove(index);
+            System.out.println("\nDado apagado\n");
+        }catch (Exception e){
+            System.out.println("\nErro ao apagar o dado\n");
         }
-       taskcontent.remove(content);
-        tasks.remove(index);
-        System.out.println(index);
+
     }
 
     //search function
-    public boolean search(String content){
-        for(String data:taskcontent){
+    public void search(String content){
+        for (String data:contentList){
             if(data.equals(content)){
-                return true;
+                System.out.println("\nDado encontrado");
+                return;
             }
         }
-        return false;
+        System.out.println("Dado não encontrado");
     }
 
     //function to delete data
     public void deleteAll(){
-        taskcontent.clear();
-        tasks.clear();
+        contentList.clear();
+        priorityList.clear();
     }
 
     //method for showing tasks
     public void print(){
-        if(tasks.isEmpty()){
-            System.out.println("\nLista vazia");
-        }else {
-            System.out.println(tasks);
+        System.out.println("\nTarefas:");
+        for(int i=0;i<contentList.size();i++){
+            System.out.println("index = "+i+" , priority = "+priorityList.get(i)+", content = "+contentList.get(i));
         }
     }
-
 }
