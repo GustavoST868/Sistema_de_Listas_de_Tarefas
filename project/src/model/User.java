@@ -70,4 +70,12 @@ public class User {
             System.out.println("index = "+i+" , username = "+username.get(i)+", pass = "+password.get(i));
         }
     }
+
+    public List<String> getUsernameList(){
+        return username;
+    }
+
+    public List<String> getPasswordList(){
+        return password;
+    }
 }

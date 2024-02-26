@@ -1,7 +1,7 @@
 package model;
 
-public class Authentication {
 
+public class Authentication {
     public Authentication(){
 
     }
