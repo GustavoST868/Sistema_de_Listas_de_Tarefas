@@ -37,7 +37,6 @@ public class Task {
             }
             contentList.remove(index);
             priorityList.remove(index);
-            username.remove(index);
             System.out.println("\nDado apagado\n");
         }catch (Exception e){
             System.out.println("\nErro ao apagar o dado\n");
@@ -75,10 +74,11 @@ public class Task {
     //method for showing tasks
     public void print(){
         try {
-            System.out.println("\nTarefas:");
+            System.out.println("\n\nTarefas:");
             for(int i=0;i<contentList.size();i++){
                 System.out.println("index = "+i+"username = "+username.get(i)+" priority = "+priorityList.get(i)+", content = "+contentList.get(i));
             }
+            System.out.println("\n\n");
         }catch (Exception e ){
             System.out.println("Erro na funcao de mostrar tarefas");
         }
