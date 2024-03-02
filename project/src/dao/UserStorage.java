@@ -1,22 +1,51 @@
 package dao;
 
-//userd libraries
-import java.util.ArrayList;
-import  java.util.List;
+import model.User;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserStorage {
 
-    //attributes
-    public List<String>  usernameList = new ArrayList<>();
-    public List<String>  passwordList = new ArrayList<>();
+    // Attributes
+    public List<String> usernameList = new ArrayList<>();
+    User user_class = new User();
 
-    public  UserStorage(List<String> username,List<String> password){
-        usernameList = username;
-        passwordList = password;
+    // Default constructor
+    public UserStorage() {
+
     }
 
-    public void StoreUserData(){
+    // Save data to file
+    public void storeUserData(List<String> usernames) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt"))) {
+            for (String username : usernames) {
+                writer.write(username);
+                writer.newLine();
+            }
+            System.out.println("Usuários salvos com sucesso em um arquivo");
+        } catch (IOException e) {
+            System.err.println("Erro ao armazenar usuários: " + e.getMessage());
+        }
+    }
 
+    // Get data from file
+    public void getUserData() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Updated to handle any number of parts
+                usernameList.add(line);
+            }
+            System.out.println("Dados obtidos com sucesso dos usuários nos arquivos");
+        } catch (IOException e) {
+            System.err.println("Erro ao obter os dados dos usuários nos arquivos: " + e.getMessage());
+        }
+    }
+
+
+    public List<String> return_users(){
+        return usernameList;
     }
 }

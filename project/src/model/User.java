@@ -10,17 +10,17 @@ public class User {
     //attributes that make up the users
 
     public List<String>  username = new ArrayList<>();
-    public List<String>  password = new ArrayList<>();
+
 
     public User(){
 
     }
 
     //method for creating user
-    public void create(String user,String pass){
+    public void create(String user){
         try{
             username.add(user);
-            password.add(pass);
+
         }catch (Exception e){
             System.out.println("Erro ao criar o usuario");
         }
@@ -28,10 +28,10 @@ public class User {
     }
 
     //method for deleting user
-    public void delete(String user,String pass){
+    public void delete(String user){
         try{
             username.remove(user);
-            password.remove(pass);
+
         }catch (Exception e ){
             System.out.println("Erro ao remover o usuario");
         }
@@ -57,7 +57,6 @@ public class User {
     public void deleteAll(){
         try{
             username.clear();
-            password.clear();
         }catch (Exception e){
             System.out.println("Erro ao apagar as lista de senha e usuario");
         }
@@ -67,7 +66,7 @@ public class User {
     public void print(){
         System.out.println("\nUsuarios:");
         for(int i=0;i<username.size();i++){
-            System.out.println("index = "+i+" , username = "+username.get(i)+", pass = "+password.get(i));
+            System.out.println(username.get(i));
         }
     }
 
@@ -75,7 +74,9 @@ public class User {
         return username;
     }
 
-    public List<String> getPasswordList(){
-        return password;
+    public void pull(List<String> user){
+        username = user;
     }
+
+
 }
