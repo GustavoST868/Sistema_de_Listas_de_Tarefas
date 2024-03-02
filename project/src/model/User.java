@@ -65,8 +65,8 @@ public class User {
     //method for showing tasks
     public void print(){
         System.out.println("\nUsuarios:");
-        for(int i=0;i<username.size();i++){
-            System.out.println(username.get(i));
+        for (String s : username) {
+            System.out.println(s);
         }
     }
 

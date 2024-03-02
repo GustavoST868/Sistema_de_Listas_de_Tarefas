@@ -1,4 +1,3 @@
-import model.Task;
 import view.Menu;
 
 public class Main {

@@ -1,7 +1,4 @@
 package dao;
-
-import model.User;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +7,6 @@ public class UserStorage {
 
     // Attributes
     public List<String> usernameList = new ArrayList<>();
-    User user_class = new User();
 
     // Default constructor
     public UserStorage() {
