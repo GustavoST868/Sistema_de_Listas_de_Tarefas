@@ -72,16 +72,30 @@ public class Task {
     }
 
     //method for showing tasks
-    public void print(){
+    public void print(String username_main){
         try {
             System.out.println("\n\nTarefas:");
             for(int i=0;i<contentList.size();i++){
-                System.out.println("index = "+i+"username = "+username.get(i)+" priority = "+priorityList.get(i)+", content = "+contentList.get(i));
+                if(username.get(i).equals(username_main)){
+                    System.out.println("index = "+i+" priority = "+priorityList.get(i)+", content = "+contentList.get(i));
+                }
             }
             System.out.println("\n\n");
         }catch (Exception e ){
             System.out.println("Erro na funcao de mostrar tarefas");
         }
 
+    }
+
+    public void updata_user(List<String> user_list_update){
+        username = user_list_update;
+    }
+
+    public List<String> getListPriority(){
+        return priorityList;
+    }
+
+    public List<String> getListContent(){
+        return contentList;
     }
 }

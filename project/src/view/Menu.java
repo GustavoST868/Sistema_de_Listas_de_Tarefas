@@ -24,6 +24,7 @@ public class Menu {
 
         userStorage.getUserData();
         user_class.pull(userStorage.return_users());
+        task.updata_user(userStorage.return_users());
         user_class.print();
 
 
@@ -64,7 +65,7 @@ public class Menu {
                     task.search(content_three);
                     break;
                 case 4:
-                    task.print();
+                    task.print(user);
                     break;
                 default:
                     System.out.println("Esta opcao não é valida!");
