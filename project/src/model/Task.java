@@ -87,18 +87,23 @@ public class Task {
 
     }
 
+
+    //update list data
     public void updata_user(List<String> user_list_update){
         username = user_list_update;
     }
 
+    //get priority list
     public List<String> getListPriority(){
         return priorityList;
     }
 
+    //get content list
     public List<String> getListContent(){
         return contentList;
     }
 
+    //get username list
     public List<String> getListUsername(){
         return username;
     }

@@ -3,15 +3,15 @@ package dao;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 public class TaskStorage {
 
+    //attributes
     public List<String> copy_username;
     public List<String> copy_priority;
     public List<String> copy_content;
@@ -20,6 +20,7 @@ public class TaskStorage {
 
     }
 
+    //update list data
     public void update_lists(List<String> username,List<String> priority,List<String> content){
         copy_username = username;
         copy_content = content;
@@ -27,6 +28,7 @@ public class TaskStorage {
         getFileTask();
     }
 
+    //store data in file
     public void storeFileTask(){
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("data_task.txt"))){
             for (int i=0;i<copy_username.size();i++){
@@ -38,6 +40,7 @@ public class TaskStorage {
         }
     }
 
+    //get the data on file
     public void getFileTask(){
         try(BufferedReader reader = new BufferedReader(new FileReader("data_task.txt"))){
             String line;
@@ -54,21 +57,5 @@ public class TaskStorage {
         }
     }
 
-    /*
-
-    public List<String> getListCopyPriority(){
-
-    }
-
-     */
-
-
-    /*
-
-    public List<String> getListCopyContent(){
-
-    }
-
-     */
 
 }

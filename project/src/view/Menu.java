@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
 
+    //attributes and objects
     Scanner scanner = new Scanner(System.in);
 
     TaskStorage taskStorage = new TaskStorage();
@@ -21,10 +22,7 @@ public class Menu {
     //method for creating menu
     public void menu(){
 
-
         taskStorage.update_lists(task.getListUsername(),task.getListPriority(),task.getListContent());
-
-
 
         int option;
 
@@ -37,6 +35,7 @@ public class Menu {
             System.out.println("2. Apagar Tarefa");
             System.out.println("3. Pesquisar Tarefa");
             System.out.println("4. Mostrar Tarefas");
+            System.out.println("5. Mudar de usuário");
             System.out.println("===========================");
 
             option = scanner.nextInt();
@@ -65,6 +64,11 @@ public class Menu {
                 case 4:
                     task.print(user);
                     break;
+
+                case 5:
+                    System.out.println("\nNome do usuário: ");
+                    user = scanner.nextLine();
+                    break;
                 default:
                     System.out.println("Esta opcao não é valida!");
             }
@@ -74,8 +78,6 @@ public class Menu {
                 break;
             }
         }
-
         taskStorage.storeFileTask();
-
     }
 }
