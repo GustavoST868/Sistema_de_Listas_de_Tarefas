@@ -1,18 +1,17 @@
 package view;
 
 import dao.TaskStorage;
-import dao.UserStorage;
 import model.Task;
-import model.User;
 
 import java.util.Scanner;
 
 public class Menu {
 
     Scanner scanner = new Scanner(System.in);
-    UserStorage userStorage = new UserStorage();
 
-    User user_class = new User();
+    TaskStorage taskStorage = new TaskStorage();
+
+
     Task task = new Task();
 
     public Menu(){
@@ -22,17 +21,16 @@ public class Menu {
     //method for creating menu
     public void menu(){
 
-        userStorage.getUserData();
-        user_class.pull(userStorage.return_users());
-        task.updata_user(userStorage.return_users());
-        user_class.print();
+
+        taskStorage.update_lists(task.getListUsername(),task.getListPriority(),task.getListContent());
+
 
 
         int option;
 
         System.out.println("\nInforme o nome do usuario: ");
         String user = scanner.nextLine();
-        user_class.create(user);
+
         while (true){
             System.out.println("\n\n===== Menu de Tarefas =====");
             System.out.println("1. Criar Tarefa");
@@ -76,6 +74,8 @@ public class Menu {
                 break;
             }
         }
-        userStorage.storeUserData(user_class.getUsernameList());
+
+        taskStorage.storeFileTask();
+
     }
 }

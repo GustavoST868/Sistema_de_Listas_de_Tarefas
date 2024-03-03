@@ -98,4 +98,8 @@ public class Task {
     public List<String> getListContent(){
         return contentList;
     }
+
+    public List<String> getListUsername(){
+        return username;
+    }
 }
