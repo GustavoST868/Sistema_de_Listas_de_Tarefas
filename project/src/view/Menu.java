@@ -26,7 +26,7 @@ public class Menu {
 
         int option;
 
-        System.out.println("\nInforme o nome do usuario: ");
+        System.out.println("\nNome do usuario: ");
         String user = scanner.nextLine();
 
         while (true){
