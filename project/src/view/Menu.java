@@ -10,8 +10,6 @@ public class Menu {
     //attributes and objects
     Scanner scanner = new Scanner(System.in);
     TaskStorage taskStorage = new TaskStorage();
-
-
     Task task = new Task();
 
     public Menu(){
@@ -26,7 +24,7 @@ public class Menu {
         int option;
 
         //get username
-        System.out.println("\nNome do usuario: ");
+        System.out.println("\nNome do usuário: ");
         String user = scanner.nextLine();
 
         //loop to keep the user in the program
@@ -74,7 +72,7 @@ public class Menu {
                         user = scanner.nextLine();
                         break;
                     default:
-                        System.out.println("Esta opcao não é valida!");
+                        System.out.println("Esta opção não é valida!");
                 }
             }catch (Exception e){
                 System.out.println("Erro no menu de opcoes");
