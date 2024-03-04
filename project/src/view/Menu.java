@@ -18,7 +18,6 @@ public class Menu {
     public Menu(){
 
     }
-
     //method for creating menu
     public void menu(){
 
