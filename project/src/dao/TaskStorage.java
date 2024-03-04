@@ -1,13 +1,12 @@
 package dao;
 
+//used libraries
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
-
 
 public class TaskStorage {
 
@@ -56,6 +55,4 @@ public class TaskStorage {
             System.out.println("");
         }
     }
-
-
 }
