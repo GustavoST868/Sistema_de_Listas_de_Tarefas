@@ -74,15 +74,20 @@ public class Task {
     //method for showing tasks
     public void print(String username_main){
         try {
-            System.out.println("\n\nTarefas:");
-            for(int i=0;i<contentList.size();i++){
-                if(username.get(i).equals(username_main)){
-                    System.out.println("index = "+i+" priority = "+priorityList.get(i)+", content = "+contentList.get(i));
+            if (contentList.isEmpty()) {
+                System.out.println("Não há tarefas criadas no momento.");
+            } else {
+                System.out.println("\n\nTarefas:");
+                for (int i = 0; i < contentList.size(); i++) {
+                    if (username.get(i).equals(username_main)) {
+                        System.out.printf("Índice: %d, Prioridade: %s, Conteúdo: %s%n",
+                                i, priorityList.get(i), contentList.get(i));
+                    }
                 }
+                System.out.println("\n\n");
             }
-            System.out.println("\n\n");
-        }catch (Exception e ){
-            System.out.println("Erro na funcao de mostrar tarefas");
+        } catch (Exception e) {
+            System.out.println("Erro na função de mostrar tarefas");
         }
 
     }

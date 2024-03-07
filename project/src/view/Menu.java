@@ -79,7 +79,7 @@ public class Menu {
             }
 
 
-            System.out.println("Deseja sair? [S/N]");
+            System.out.println("Deseja sair e  salvar os dados? [S/N]");
             String option_one = scanner.nextLine();
 
             //structure to close the program or not
