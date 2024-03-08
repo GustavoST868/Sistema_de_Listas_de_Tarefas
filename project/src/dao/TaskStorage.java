@@ -34,9 +34,7 @@ public class TaskStorage {
                 writer.write(copy_username.get(i)+","+copy_priority.get(i)+","+copy_content.get(i));
                 writer.newLine();
             }
-        }catch (IOException e){
-            System.out.println("");
-        }
+        }catch (IOException e){System.out.println("");}
     }
 
     //get the data on file
@@ -51,8 +49,6 @@ public class TaskStorage {
                     copy_content.add(parts[2]);
                 }
             }
-        }catch (IOException e){
-            System.out.println("");
-        }
+        }catch (IOException e){System.out.println("");}
     }
 }
