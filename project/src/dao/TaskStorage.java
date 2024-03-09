@@ -1,6 +1,8 @@
 package dao;
 
 //used libraries
+import model.Cryptography;
+
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,6 +16,9 @@ public class TaskStorage {
     public List<String> copy_username;
     public List<String> copy_priority;
     public List<String> copy_content;
+
+    //class change it so that no one can read it
+    Cryptography cryptography = new Cryptography();
 
     public TaskStorage(){
 
@@ -29,9 +34,10 @@ public class TaskStorage {
 
     //store data in file
     public void storeFileTask(){
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("data_task.txt"))){
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("data_task"))){
             for (int i=0;i<copy_username.size();i++){
-                writer.write(copy_username.get(i)+","+copy_priority.get(i)+","+copy_content.get(i));
+                writer.write(cryptography.Encrypt(copy_username.get(i))+","+cryptography.Encrypt(copy_priority.get(i))+","+cryptography.Encrypt(copy_content.get(i)));
                 writer.newLine();
             }
         }catch (IOException e){System.out.println("");}
@@ -39,14 +45,14 @@ public class TaskStorage {
 
     //get the data on file
     public void getFileTask(){
-        try(BufferedReader reader = new BufferedReader(new FileReader("data_task.txt"))){
+        try(BufferedReader reader = new BufferedReader(new FileReader("data_task"))){
             String line;
             while ((line = reader.readLine())!=null){
                 String [] parts = line.split(",");
                 if(parts.length ==3){
-                    copy_username.add(parts[0]);
-                    copy_priority.add(parts[1]);
-                    copy_content.add(parts[2]);
+                    copy_username.add(cryptography.Decrypt(parts[0]));
+                    copy_priority.add(cryptography.Decrypt(parts[1]));
+                    copy_content.add(cryptography.Decrypt(parts[2]));
                 }
             }
         }catch (IOException e){System.out.println("");}

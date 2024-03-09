@@ -2,6 +2,7 @@ package view;
 
 //used libraries
 import dao.TaskStorage;
+import model.Cryptography;
 import model.Task;
 import java.util.Scanner;
 
@@ -87,6 +88,7 @@ public class Menu {
                 break;
             }
         }
+
         //store data in file
         taskStorage.storeFileTask();
     }
