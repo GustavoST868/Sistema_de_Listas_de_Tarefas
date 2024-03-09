@@ -1,4 +1,3 @@
-import model.Cryptography;
 import view.Menu;
 
 public class Main {
