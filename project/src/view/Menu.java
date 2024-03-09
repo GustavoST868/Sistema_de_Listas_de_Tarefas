@@ -78,7 +78,6 @@ public class Menu {
                 System.out.println("Erro no menu de opcoes");
             }
 
-
             System.out.println("Deseja sair e  salvar os dados? [S/N]");
             String option_one = scanner.nextLine();
 
