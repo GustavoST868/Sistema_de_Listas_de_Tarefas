@@ -82,8 +82,8 @@ public class Menu {
             String option_one = scanner.nextLine();
 
             //structure to close the program or not
-            if(option_one.equals("N") || option_one.equals("n")){}else{
-                break;
+            if(option_one.equals("S") || option_one.equals("s")){ break;}else{
+
             }
         }
 
