@@ -99,16 +99,34 @@ public class Task {
 
     //get priority list
     public List<String> getListPriority(){
-        return priorityList;
+        try{
+            return priorityList;
+        }catch (Exception e ){
+            System.out.println("Erro na funcao de retornar a lista de prioridade");
+            return priorityList;
+        }
+
     }
 
     //get content list
     public List<String> getListContent(){
-        return contentList;
+        try{
+            return contentList;
+        }catch (Exception e ){
+            System.out.println("Erro na funcao de retornar a lista de conteudo");
+            return contentList;
+        }
+
     }
 
     //get username list
     public List<String> getListUsername(){
-        return username;
+
+        try{
+            return username;
+        }catch (Exception e){
+            System.out.println("Erro na funcao de retornar a lista de usuarios");
+            return username;
+        }
     }
 }

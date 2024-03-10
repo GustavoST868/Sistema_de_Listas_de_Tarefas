@@ -87,7 +87,12 @@ public class Menu {
             }
         }
 
-        //store data in file
-        taskStorage.storeFileTask();
+        try{
+            //store data in file
+            taskStorage.storeFileTask();
+        }catch (Exception e ){
+            System.out.println("");
+        }
+
     }
 }
