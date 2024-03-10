@@ -19,12 +19,14 @@ public class TaskStorage {
     //class change it so that no one can read it
     Cryptography cryptography = new Cryptography();
 
-    public TaskStorage(){
-
-    }
+    public TaskStorage(){}
 
     //update list data
-    public void update_lists(List<String> username,List<String> priority,List<String> content){
+    public void update_lists(
+            List<String> username,
+            List<String> priority,
+            List<String> content
+    ){
         copy_username = username;
         copy_content = content;
         copy_priority = priority;
@@ -33,7 +35,6 @@ public class TaskStorage {
 
     //store data in file
     public void storeFileTask(){
-
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("data_task"))){
             for (int i=0;i<copy_username.size();i++){
                 writer.write(cryptography.Encrypt(copy_username.get(i))+","+cryptography.Encrypt(copy_priority.get(i))+","+cryptography.Encrypt(copy_content.get(i)));

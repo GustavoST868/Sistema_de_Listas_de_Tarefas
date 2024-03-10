@@ -1,2 +1,1 @@
-Poder apagar pelo indice e conteudo.
-Revisar o visual.
+Criar a opção de editar uma dada tarefa.

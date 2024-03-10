@@ -9,11 +9,16 @@ public class Task {
     public List<String>  username = new ArrayList<>();
     public List<String>  priorityList = new ArrayList<>();
     public List<String>  contentList = new ArrayList<>();
+    CheckType checkType = new CheckType();
 
     public Task(){}
 
     //method for creating tasks
-    public void create(String user, String priority,String content){
+    public void create(
+            String user,
+            String priority,
+            String content
+    ){
         try{
             username.add(user);
             priorityList.add(priority);
@@ -21,27 +26,34 @@ public class Task {
         }catch (Exception e){
             System.out.println("Erro na funcao de criar tarefa");
         }
-
     }
 
     //method for deleting tasks
     public void delete(String content) {
-        int index = 0;
-        try{
-            for (String data:contentList){
-                if(data.equals(content)){
-                    break;
-                }else {
-                    index+=1;
+        if(checkType.checkType(content) == 1 ||checkType.checkType(content) == 3){
+            int index = 0;
+            try{
+                for (String data:contentList){
+                    if(data.equals(content)){
+                        break;
+                    }else {
+                        index+=1;
+                    }
                 }
+                contentList.remove(index);
+                priorityList.remove(index);
+                System.out.println("\nDado apagado\n");
+            }catch (Exception e){
+                System.out.println("\nErro ao apagar o dado\n");
             }
-            contentList.remove(index);
-            priorityList.remove(index);
-            System.out.println("\nDado apagado\n");
-        }catch (Exception e){
-            System.out.println("\nErro ao apagar o dado\n");
+        }else{
+            try{
+                contentList.remove(Integer.parseInt(content));
+                priorityList.remove(Integer.parseInt(content));
+            }catch (Exception e){
+                System.out.println("Erro ao tentar apagar o dado");
+            }
         }
-
     }
 
     //search function
@@ -68,7 +80,6 @@ public class Task {
         }catch (Exception e){
             System.out.println("Erro na funcao de deletar tarefas");
         }
-
     }
 
     //method for showing tasks
@@ -89,7 +100,6 @@ public class Task {
         } catch (Exception e) {
             System.out.println("Erro na função de mostrar tarefas");
         }
-
     }
 
     //update list data
@@ -105,7 +115,6 @@ public class Task {
             System.out.println("Erro na funcao de retornar a lista de prioridade");
             return priorityList;
         }
-
     }
 
     //get content list
@@ -116,16 +125,14 @@ public class Task {
             System.out.println("Erro na funcao de retornar a lista de conteudo");
             return contentList;
         }
-
     }
 
     //get username list
     public List<String> getListUsername(){
-
         try{
             return username;
         }catch (Exception e){
-            System.out.println("Erro na funcao de retornar a lista de usuarios");
+            System.out.println("Erro na funcao para  retornar a lista de usuarios");
             return username;
         }
     }

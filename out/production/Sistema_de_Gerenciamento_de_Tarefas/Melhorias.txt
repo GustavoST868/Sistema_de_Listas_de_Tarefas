@@ -1,2 +1,3 @@
 Poder apagar pelo indice e conteudo.
 Revisar o visual.
+Fazer os tratamentos de excessoes.

@@ -12,9 +12,7 @@ public class Menu {
     TaskStorage taskStorage = new TaskStorage();
     Task task = new Task();
 
-    public Menu(){
-
-    }
+    public Menu(){}
     //method for creating menu
     public void menu(){
 
@@ -35,6 +33,7 @@ public class Menu {
             System.out.println("3. Pesquisar Tarefa");
             System.out.println("4. Mostrar Tarefas");
             System.out.println("5. Mudar de usuário");
+            System.out.println("6. Deletar todas as tarefas");
             System.out.println("===========================");
 
             //get menu option
@@ -71,6 +70,9 @@ public class Menu {
                         System.out.println("\nNome do usuário: ");
                         user = scanner.nextLine();
                         break;
+                    case 6:
+                        task.deleteAll();
+                        break;
                     default:
                         System.out.println("Esta opção não é valida!");
                 }
@@ -82,17 +84,13 @@ public class Menu {
             String option_one = scanner.nextLine();
 
             //structure to close the program or not
-            if(option_one.equals("S") || option_one.equals("s")){ break;}else{
-
-            }
+            if(option_one.equals("S") || option_one.equals("s")){ break;}else{}
         }
-
         try{
             //store data in file
             taskStorage.storeFileTask();
-        }catch (Exception e ){
+        }catch (Exception e){
             System.out.println("");
         }
-
     }
 }

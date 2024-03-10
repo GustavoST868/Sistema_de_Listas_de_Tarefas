@@ -37,9 +37,6 @@ public class Cryptography {
                 }
             }
         }
-
         return new String(text_vector);
     }
-
-
 }
