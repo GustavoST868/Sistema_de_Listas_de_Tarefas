@@ -71,8 +71,8 @@ public class Menu {
                         user = scanner.nextLine();
                         break;
                     case 6:
-                        task.deleteAll();
-                        break;
+                        task.deleteAll(user);
+                    break;
                     default:
                         System.out.println("Esta opção não é valida!");
                 }

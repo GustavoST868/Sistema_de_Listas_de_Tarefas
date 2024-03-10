@@ -72,11 +72,17 @@ public class Task {
     }
 
     //function to delete data
-    public void deleteAll(){
+    public void deleteAll(String user){
         try{
-            contentList.clear();
-            priorityList.clear();
-            username.clear();
+            int index = 0;
+            for(int i =0 ; i<username.size();i++){
+                if(username.get(i).equals(user)){
+                    username.remove(index);
+                    priorityList.remove(index);
+                    contentList.remove(index);
+                }
+                index+=1;
+            }
         }catch (Exception e){
             System.out.println("Erro na funcao de deletar tarefas");
         }
