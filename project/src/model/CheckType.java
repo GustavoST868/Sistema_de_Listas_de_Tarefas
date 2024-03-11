@@ -6,16 +6,21 @@ public class CheckType {
 
     // check the data type
     public int checkType(String input){
-        if(input.matches("[a-zA-Z]+")){
-            //return  what is text
-            return 1;
-        }else if(input.matches("\\d+")){
-            //return what is number
-            return 2;
-        }else{
-            //return what is compound
-            return 3;
+        try{
+            if(input.matches("[a-zA-Z]+")){
+                //return  what is text
+                return 1;
+            }else if(input.matches("\\d+")){
+                //return what is number
+                return 2;
+            }else{
+                //return what is compound
+                return 3;
+            }
+        } catch (Exception e){
+            System.out.println("Erro na funcao de verificar o tipo do dado");
         }
+
     }
 
 }

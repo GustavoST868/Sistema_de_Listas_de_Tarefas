@@ -11,15 +11,20 @@ public class Cryptography {
     //function to encrypt
     public String Encrypt(String text){
         char[] text_vector  = text.toCharArray();
-        for(int i=0;i< text_vector.length;i++){
-            char current_character = text_vector[i];
-            if(Character.isLetter(current_character)){
-                if(Character.isUpperCase(current_character)){
-                    text_vector[i] = (char) (((current_character - 'A'+3)%26) + 'A');
-                }else{
-                    text_vector[i] = (char) (((current_character - 'a'+3)%26) + 'a');
+        try{
+
+            for(int i=0;i< text_vector.length;i++){
+                char current_character = text_vector[i];
+                if(Character.isLetter(current_character)){
+                    if(Character.isUpperCase(current_character)){
+                        text_vector[i] = (char) (((current_character - 'A'+3)%26) + 'A');
+                    }else{
+                        text_vector[i] = (char) (((current_character - 'a'+3)%26) + 'a');
+                    }
                 }
             }
+        }catch (Exception e){
+            System.out.println("Erro na funcao de criptografar o texto");
         }
         return new String(text_vector);
     }
@@ -27,15 +32,19 @@ public class Cryptography {
     //function to decrypt
     public String Decrypt(String text){
         char[] text_vector = text.toCharArray();
-        for (int i = 0; i < text_vector.length; i++) {
-            char current_character = text_vector[i];
-            if (Character.isLetter(current_character)) {
-                if (Character.isUpperCase(current_character)) {
-                    text_vector[i] = (char) (((current_character - 'A' + 23) % 26) + 'A');
-                } else {
-                    text_vector[i] = (char) (((current_character - 'a' + 23) % 26) + 'a');
+        try{
+            for (int i = 0; i < text_vector.length; i++) {
+                char current_character = text_vector[i];
+                if (Character.isLetter(current_character)) {
+                    if (Character.isUpperCase(current_character)) {
+                        text_vector[i] = (char) (((current_character - 'A' + 23) % 26) + 'A');
+                    } else {
+                        text_vector[i] = (char) (((current_character - 'a' + 23) % 26) + 'a');
+                    }
                 }
             }
+        }catch (Exception e){
+            System.out.println("Erro na funcao de descriptografar o texto");
         }
         return new String(text_vector);
     }

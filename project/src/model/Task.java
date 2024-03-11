@@ -155,7 +155,12 @@ public class Task {
 
     //update list data
     public void updata_user(List<String> user_list_update){
-        username = user_list_update;
+        try{
+            username = user_list_update;
+        }catch (Exception e){
+            System.out.println("Erro na funcao de atualizar a lista de usuarios");
+        }
+
     }
 
     //get priority list
@@ -190,10 +195,14 @@ public class Task {
 
     //print users
     public void printUsers(){
-        System.out.println("\n\n===== Usuários =====");
-        for (String s : username) {
-            System.out.println(s);
+        try{
+            System.out.println("\n\n===== Usuários =====");
+            for (String s : username) {
+                System.out.println(s);
+            }
+            System.out.println("===========================");
+        }catch (Exception e){
+            System.out.println("Erro na funcao de mostrar usuarios com tarefas cadastradas");
         }
-        System.out.println("===========================");
     }
 }
