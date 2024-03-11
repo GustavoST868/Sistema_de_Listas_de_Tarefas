@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cbc5a21c-4d1e-49be-aca2-320800e4c895" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Sistema_de_Gerenciamento_de_Tarefas_jar/Sistema_de_Gerenciamento_de_Tarefas.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Sistema_de_Gerenciamento_de_Tarefas_jar/Sistema_de_Gerenciamento_de_Tarefas.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/Melhorias.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Melhorias.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/dao/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/dao/TaskStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/model/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/view/Menu.java" afterDir="false" />
     </list>

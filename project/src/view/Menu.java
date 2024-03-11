@@ -22,12 +22,12 @@ public class Menu {
         int option;
 
         //get username
-        System.out.println("\nNome do usuário: ");
+        System.out.println("\nNome do usuário: \t");
         String user = scanner.nextLine();
 
         //loop to keep the user in the program
         while (true){
-            System.out.println("\n\n===== Menu de Tarefas =====");
+            System.out.println("\n\n=============== Menu de Tarefas ===============");
             System.out.println("1. Criar Tarefa");
             System.out.println("2. Apagar Tarefa");
             System.out.println("3. Pesquisar Tarefa");
@@ -35,7 +35,8 @@ public class Menu {
             System.out.println("5. Mudar de usuário");
             System.out.println("6. Deletar todas as tarefas");
             System.out.println("7. Editar tarefa");
-            System.out.println("===========================");
+            System.out.println("8. Mostrar usuários com tarefas criadas");
+            System.out.println("===============================================");
 
             //get menu option
             option = scanner.nextInt();
@@ -79,6 +80,9 @@ public class Menu {
                         String content_index = scanner.nextLine();
                         task.edit(content_index);
                         break;
+                    case 8:
+                        task.printUsers();
+                        break;
                     default:
                         System.out.println("Esta opção não é valida!");
                 }
@@ -86,17 +90,17 @@ public class Menu {
                 System.out.println("Erro no menu de opcoes");
             }
 
-            System.out.println("Deseja sair e  salvar os dados? [S/N]");
+            System.out.println("\nDeseja sair e  salvar os dados? [S/N]");
             String option_one = scanner.nextLine();
 
             //structure to close the program or not
-            if(option_one.equals("S") || option_one.equals("s")){ break;}else{}
+            if(option_one.equals("S") || option_one.equals("s")){ break;}
         }
         try{
             //store data in file
             taskStorage.storeFileTask();
         }catch (Exception e){
-            System.out.println("");
+            System.out.println(".");
         }
     }
 }

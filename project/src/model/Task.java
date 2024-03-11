@@ -187,4 +187,13 @@ public class Task {
             return username;
         }
     }
+
+    //print users
+    public void printUsers(){
+        System.out.println("\n\n===== Usuários =====");
+        for (String s : username) {
+            System.out.println(s);
+        }
+        System.out.println("===========================");
+    }
 }

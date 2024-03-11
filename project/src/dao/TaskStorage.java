@@ -55,6 +55,6 @@ public class TaskStorage {
                     copy_content.add(cryptography.Decrypt(parts[2]));
                 }
             }
-        }catch (IOException e){System.out.println("");}
+        }catch (IOException e){System.out.println(".");}
     }
 }
