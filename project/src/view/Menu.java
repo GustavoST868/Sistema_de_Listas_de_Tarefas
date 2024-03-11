@@ -34,6 +34,7 @@ public class Menu {
             System.out.println("4. Mostrar Tarefas");
             System.out.println("5. Mudar de usuário");
             System.out.println("6. Deletar todas as tarefas");
+            System.out.println("7. Editar tarefa");
             System.out.println("===========================");
 
             //get menu option
@@ -73,6 +74,11 @@ public class Menu {
                     case 6:
                         task.deleteAll(user);
                     break;
+                    case 7:
+                        System.out.println("Informe o conteúdo ou indice da tarefa: ");
+                        String content_index = scanner.nextLine();
+                        task.edit(content_index);
+                        break;
                     default:
                         System.out.println("Esta opção não é valida!");
                 }

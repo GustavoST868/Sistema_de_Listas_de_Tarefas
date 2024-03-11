@@ -3,6 +3,8 @@ package model;
 //used libraries
 import java.util.ArrayList;
 import  java.util.List;
+import java.util.Scanner;
+
 public class Task {
 
     //attributes that make up the tasks
@@ -10,6 +12,8 @@ public class Task {
     public List<String>  priorityList = new ArrayList<>();
     public List<String>  contentList = new ArrayList<>();
     CheckType checkType = new CheckType();
+
+    Scanner scanner = new Scanner(System.in);
 
     public Task(){}
 
@@ -88,20 +92,61 @@ public class Task {
         }
     }
 
+    //function to edit item
+    public void edit(String content){
+        //variable that can or cannot be used
+        int index = 0;
+        try{
+            if(checkType.checkType(content) == 2){
+                //get new content
+                System.out.println("Informe o novo conteúdo da tarefa: ");
+                String data = scanner.nextLine();
+
+                //get new priority
+                System.out.println("Informe a nova prioridade da tarefa: ");
+                String new_priority  = scanner.nextLine();
+
+                //to change
+                priorityList.set(Integer.parseInt(content),new_priority);
+                contentList.set(Integer.parseInt(content),data);
+
+            }else{
+                for(int i=0;i<contentList.size();i++){
+                    if(content.equals(contentList.get(i))){
+                        break;
+                    }
+                }
+                //get new content
+                System.out.println("Informe o novo conteúdo da tarefa: ");
+                String data = scanner.nextLine();
+
+                //get new priority
+                System.out.println("Informe a nova prioridade da tarefa: ");
+                String new_priority  = scanner.nextLine();
+
+                //to change
+                priorityList.set(index,new_priority);
+                contentList.set(index,data);
+            }
+        }catch (Exception e){
+            System.out.println("Erro ao tentar alterar o dado da lista");
+        }
+    }
+
     //method for showing tasks
     public void print(String username_main){
         try {
             if (contentList.isEmpty()) {
                 System.out.println("Não há tarefas criadas no momento.");
             } else {
-                System.out.println("\n\nTarefas:");
+                System.out.println("\n\n==================== Tarefas ====================");
                 for (int i = 0; i < contentList.size(); i++) {
                     if (username.get(i).equals(username_main)) {
                         System.out.printf("Índice: %d, Prioridade: %s, Conteúdo: %s%n",
-                                i, priorityList.get(i), contentList.get(i));
+                                contentList.indexOf(contentList.get(i)), priorityList.get(i), contentList.get(i));
                     }
                 }
-                System.out.println("\n\n");
+                System.out.println("====================================================");
             }
         } catch (Exception e) {
             System.out.println("Erro na função de mostrar tarefas");
