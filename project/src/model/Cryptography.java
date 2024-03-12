@@ -26,6 +26,7 @@ public class Cryptography {
         }catch (Exception e){
             System.out.println("Erro na funcao de criptografar o texto");
         }
+        //return the changed text
         return new String(text_vector);
     }
 
@@ -46,6 +47,7 @@ public class Cryptography {
         }catch (Exception e){
             System.out.println("Erro na funcao de descriptografar o texto");
         }
+        //return the changed text
         return new String(text_vector);
     }
 }

@@ -20,7 +20,8 @@ public class CheckType {
         } catch (Exception e){
             System.out.println("Erro na funcao de verificar o tipo do dado");
         }
-
+        //if the try is wrong
+        return 0;
     }
 
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class TaskStorage {
 
-    //attributes
+    //attributes and objects
     public List<String> copy_username;
     public List<String> copy_priority;
     public List<String> copy_content;

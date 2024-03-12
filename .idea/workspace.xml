@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cbc5a21c-4d1e-49be-aca2-320800e4c895" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Melhorias.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Melhorias.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_task" beforeDir="false" afterPath="$PROJECT_DIR$/data_task" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/dao/TaskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/dao/TaskStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/model/CheckType.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/model/CheckType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/model/Cryptography.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/model/Cryptography.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/model/Task.java" afterDir="false" />

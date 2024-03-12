@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Task {
 
-    //attributes that make up the tasks
+    //attributes that make up the tasks and objects
     public List<String>  username = new ArrayList<>();
     public List<String>  priorityList = new ArrayList<>();
     public List<String>  contentList = new ArrayList<>();
@@ -193,14 +193,19 @@ public class Task {
         }
     }
 
-    //print users
+    //show users with registered tasks
     public void printUsers(){
         try{
-            System.out.println("\n\n===== Usuários =====");
-            for (String s : username) {
-                System.out.println(s);
+            if(username.isEmpty()){
+                System.out.println("Não há usuários com atividades cadastradas.");
+            }else{
+                System.out.println("\n\n========== Usuários ==========");
+                for (String s : username) {
+                    System.out.println(s);
+                }
+                System.out.println("==============================");
             }
-            System.out.println("===========================");
+
         }catch (Exception e){
             System.out.println("Erro na funcao de mostrar usuarios com tarefas cadastradas");
         }
